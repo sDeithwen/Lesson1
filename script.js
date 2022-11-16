@@ -18,4 +18,4 @@ function getData() {
         + userBirthDay + "." + userBirthMonth + "." + userBirthYear);
 }
 
-getData();
+// getData();
