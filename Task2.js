@@ -15,7 +15,6 @@ const secondCity = {
 }
 
 const thirdCity = {}
-
 for (let key in firstCity) {
     thirdCity[key] = firstCity[key];
 }
