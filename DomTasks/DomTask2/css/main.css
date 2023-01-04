@@ -1,0 +1,13 @@
+body {
+    padding: 1%;
+}
+
+input, div, textarea {
+    margin-top: 1%;
+    display: inline;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
