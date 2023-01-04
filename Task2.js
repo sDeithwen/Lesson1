@@ -23,7 +23,9 @@ thirdCity.name = 'Орегон';
 thirdCity.foundationDate = new Date("02.14.1859");
 
 const fourthCity = {}
+
 Object.assign(fourthCity, secondCity);
+
 fourthCity.name = 'Чикаго';
 fourthCity.foundationDate = new Date("08.12.1833");
 

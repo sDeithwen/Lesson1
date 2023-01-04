@@ -14,11 +14,12 @@ unfilledOrder = {
 }
 
 function fullInfo(obj) {
-    // let {money: someMoney, name} =  {name: 'John', money: 1000};
     let { name: orderName = "defName", description: orderDescr = "defDescr", cost: orderCost = 10,
         curr: orderCurr = "defCurr", company: orderCompany = "defCompany", date: orderDate = new Date("11.11.2011") } = obj;
-    console.log("Название: " + orderName + "\nОписание: " + orderDescr + "\nЦена: "
+    
+        console.log("Название: " + orderName + "\nОписание: " + orderDescr + "\nЦена: "
         + orderCost + "\nВалюта: " + orderCurr + "\nПроизводитель: " + orderCompany + "\nДата: " + orderDate);
 }
+
 fullInfo(order);
 fullInfo(unfilledOrder);
