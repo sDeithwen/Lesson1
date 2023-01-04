@@ -2,13 +2,17 @@
 //  целое число и возвращает сумму его цифр.
 
 let getDigitsSum = (num) => {
-    if (num % 2 != 0) {
+    if (num % 2 !== 0) {
         return `Ввёденное число (${num}) не целое!`;
     }
+    
     const arrayOfDigits = Array.from(String(String(num)), Number)
     let sum = 0;
-    for (i = 0; i < arrayOfDigits.length; i++)
+
+    for (let i = 0; i < arrayOfDigits.length; i++) {
         sum += arrayOfDigits[i];
+    }
+
     return sum;
 }
 

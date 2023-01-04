@@ -11,14 +11,18 @@ function getNumInInterval(min, max) {
 }
 
 function doesNumbersMatch(secretNum, userNum, biggerF, smallerF, itsWin, countOfAttempt) {
-    if (secretNum == userNum) {
+    if (secretNum === userNum) {
         itsWin(countOfAttempt);
+
         return true;
     }
-    if (userNum > secretNum)
+
+    if (userNum > secretNum) {
         biggerF();
-    else
+    } else {
         smallerF();
+    }
+
     return false;
 }
 
@@ -37,12 +41,16 @@ function userWin(countOfAttempt) {
 let min = 1;
 let max = 10;
 let secretNum = getNumInInterval(min, max);
-console.log(secretNum);
 let countOfAttempt = 5;
 
+console.log(secretNum);
+
 while (countOfAttempt > 0 &&
-    !doesNumbersMatch(secretNum, prompt(`Отгадайте число от ${1} до ${10}. Количество попыток: ${countOfAttempt}`), userNumIsBigger, userNumIsSmaller, userWin, countOfAttempt)) {
+    !doesNumbersMatch(secretNum, prompt(`Отгадайте число от ${1} до ${10}. Количество попыток: ${countOfAttempt}`),
+        userNumIsBigger, userNumIsSmaller, userWin, countOfAttempt)) {
     countOfAttempt--;
-    if (countOfAttempt < 1)
+    
+    if (countOfAttempt < 1) {
         alert(`Вы проиграли :( Загаданное число: ${secretNum}`);
+    }
 }

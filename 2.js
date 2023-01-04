@@ -2,12 +2,11 @@
 // число и проверяет: четное оно или нет. Если четное - функция возвращает true, если нечетное - false.
 
 let isEven = (num) => {
-    if (num % 2 == 0)
-        return true;
-    return false;
+    return num % 2 === 0;
 }
 
-if (isEven(7))
+if (isEven(7)) {
     alert("Число четное");
-else
+} else {
     alert("Число нечетное");
+}
