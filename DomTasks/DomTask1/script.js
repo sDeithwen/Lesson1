@@ -10,6 +10,7 @@ let goodsTable = [
 
 function removeRow(rowId) {
     let row = document.getElementById(rowId);
+
     row.remove();
 }
 
@@ -31,16 +32,17 @@ function createTable() {
 
         tblBody.appendChild(row);
 
-        if (i == 0)
+        if (i === 0)
             row.style.fontWeight = 'bold';
 
         for (let j = 0; j < goodsTable[0].length; j++) {
             const cell = document.createElement("td");
 
-            if (j == 2 && i != 0)
+            if (j === 2 && i !== 0) {
                 cell.innerHTML = createButton(row.id);
-            else
+            } else {
                 cell.innerText = goodsTable[i][j];
+            }
 
             row.appendChild(cell);
         }

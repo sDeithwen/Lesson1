@@ -24,13 +24,15 @@ function addRow() {
         const cell = document.createElement("td");
 
         if (i < 3) {
-            cell.innerText = inputsArr[i].value == null || inputsArr[i].value.trim() == '' ? inputsArr[i].placeholder : inputsArr[i].value.trim();
+            cell.innerText = inputsArr[i].value === null || inputsArr[i].value.trim() === '' ? inputsArr[i].placeholder : inputsArr[i].value.trim();
             inputsArr[i].value = '';
 
-            if (i === 0)
+            if (i === 0) {
                 cell.onclick = () => { showFullInfo(row.id) };
-        } else
+            }
+        } else {
             cell.innerHTML = createRemoveButton(row.id);
+        }
         row.appendChild(cell);
     }
     tblBody.appendChild(row);
@@ -50,7 +52,7 @@ function createFullInfoLabel() {
 
     label = document.getElementById('fullInfo');
 
-    if (label == null) {
+    if (label === null) {
         label = document.createElement('div');
         label.id = 'fullInfo';
         label.visibility = true;
@@ -82,14 +84,14 @@ function createAddRow(tblBody) {
 
             input.classList.add('form-control');
 
-            if (i == 0) {
+            if (i === 0) {
                 input.type = 'text';
                 input.id = 'newRowName';
                 input.placeholder = 'Новый товар';
             } else {
                 input.type = 'number';
 
-                if (i == 1) {
+                if (i === 1) {
                     input.id = 'newRowCost';
                     input.placeholder = '10';
                 } else {
@@ -119,19 +121,21 @@ function createTable() {
 
         tblBody.appendChild(row);
 
-        if (i == 0)
+        if (i === 0) {
             row.style.fontWeight = 'bold';
+        }
 
         for (let j = 0; j < goodsTable[0].length; j++) {
             const cell = document.createElement("td");
 
-            if (j == 3 && i != 0)
+            if (j === 3 && i !== 0) {
                 cell.innerHTML = createRemoveButton(row.id);
-            else {
+            } else {
                 cell.innerText = goodsTable[i][j];
 
-                if (j == 0 && i != 0)
+                if (j === 0 && i !== 0) {
                     cell.onclick = () => { showFullInfo(row.id) };
+                }
             }
             row.appendChild(cell);
         }
@@ -144,8 +148,9 @@ function addEventListenerToTable(table) {
     table.onclick = function (e) {
         let elParent = e.srcElement.parentNode;
 
-        while (elParent.tagName.toLowerCase().localeCompare('td') != 1)
+        while (elParent.tagName.toLowerCase().localeCompare('td') !== 1) {
             elParent = elParent.parentNode;
+        }
 
         console.warn(elParent.id);
     };
